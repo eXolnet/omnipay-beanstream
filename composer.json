@@ -1,0 +1,36 @@
+{
+    "name": "sproutstudioinc/omnipay-beanstream",
+    "type": "library",
+    "description": "Beanstream.com gateway for the Omnipay payment processing library",
+    "keywords": [
+        "Beanstream",
+        "Beanstream.com",
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment"
+    ],
+    "homepage": "https://github.com/sproutstudioinc/omnipay-beanstream",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sprout Studio Inc.",
+            "email": "braunson.yager@sproutstudio.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Sproutstudioinc\\Beanstream\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
+}
