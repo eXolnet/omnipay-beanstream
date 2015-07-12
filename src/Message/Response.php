@@ -1,5 +1,5 @@
 <?php
-namespace Sproutstudioinc\Beanstream\Message;
+namespace Omnipay\Beanstream\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 

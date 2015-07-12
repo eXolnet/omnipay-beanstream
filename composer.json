@@ -20,7 +20,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Sproutstudioinc\\Beanstream\\" : "src/" }
+        "psr-4": { "Omnipay\\Beanstream\\" : "src/" }
     },
     "require": {
         "omnipay/common": "~2.0"

@@ -1,5 +1,5 @@
 <?php
-namespace Sproutstudioinc\Beanstream\Message;
+namespace Omnipay\Beanstream\Message;
 
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
