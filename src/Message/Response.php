@@ -46,6 +46,5 @@ class Response extends AbstractResponse
         }
 
         return null;
-
     }
 }

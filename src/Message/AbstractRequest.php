@@ -3,36 +3,62 @@ namespace Omnipay\Beanstream\Message;
 
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
-
+    /**
+     * @var string
+     */
     protected $endpoint = 'https://www.beanstream.com/api/v1';
 
+    /**
+     * @return string
+     */
     abstract public function getEndpoint();
 
+    /**
+     * @return string
+     */
     public function getMerchantId()
     {
         return $this->getParameter('merchantId');
     }
 
+    /**
+     * @param string $value
+     * @return $this
+     */
     public function setMerchantId($value)
     {
         return $this->setParameter('merchantId', $value);
     }
 
+    /**
+     * @return string
+     */
     public function getPasscode()
     {
         return $this->getParameter('passcode');
     }
 
+    /**
+     * @param string $value
+     * @return $this
+     */
     public function setPasscode($value)
     {
         return $this->setParameter('passcode', $value);
     }
 
+    /**
+     * @return string
+     */
     public function getHttpMethod()
     {
         return 'POST';
     }
 
+    /**
+     * @param mixed $data
+     * @return \Omnipay\Beanstream\Message\Response
+     */
     public function sendData($data)
     {
         // don't throw exceptions for 4xx errors
@@ -71,7 +97,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         $this->getCard()->validate();
 
-        $card = array();
+        $card = [];
         $card['name'] = $this->getCard()->getName();
         $card['number'] = $this->getCard()->getNumber();
         $card['expiry_month'] = $this->getCard()->getExpiryDate('m');
@@ -80,5 +106,4 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
         return $card;
     }
-
 }
