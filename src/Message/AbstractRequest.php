@@ -50,7 +50,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     /**
      * @return string
      */
-    public function getHttpMethod()
+    protected function getHttpMethod()
     {
         return 'POST';
     }

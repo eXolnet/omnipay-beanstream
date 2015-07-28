@@ -51,7 +51,6 @@ class AuthorizeRequest extends AbstractRequest
      */
     public function getData()
     {
-
         $this->validate('amount');
 
         $data = array();

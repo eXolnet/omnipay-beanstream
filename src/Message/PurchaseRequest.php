@@ -4,7 +4,7 @@ namespace Omnipay\Beanstream\Message;
 class PurchaseRequest extends AuthorizeRequest
 {
     /**
-     * Prevents Purchase from being seen as just an authorization
+     * @return bool
      */
     public function getComplete()
     {

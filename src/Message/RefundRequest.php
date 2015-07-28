@@ -1,23 +1,23 @@
 <?php
 namespace Omnipay\Beanstream\Message;
 
-class RefundRequest extends AuthorizeRequest
+class RefundRequest extends AbstractRequest
 {
     /**
      * @return string
      */
-    public function getTransId()
+    public function getOrderNumber()
     {
-        return $this->getParameter('trans_id');
+        return $this->getParameter('order_number');
     }
 
     /**
      * @param string $value
      * @return $this
      */
-    public function setTransId($value)
+    public function setOrderNumber($value)
     {
-        return $this->setParameter('trans_id', $value);
+        return $this->setParameter('order_number', $value);
     }
 
     /**
@@ -27,6 +27,7 @@ class RefundRequest extends AuthorizeRequest
     public function getData()
     {
         $this->validate('amount');
+
         $data = array();
         $data['order_number'] = $this->getOrderNumber();
         $data['amount'] = $this->getAmount();
@@ -39,6 +40,6 @@ class RefundRequest extends AuthorizeRequest
      */
     public function getEndpoint()
     {
-        return $this->endpoint . '/payments/' . $this->getTransId() . '/returns';
+        return $this->endpoint . '/payments/' . $this->getTransactionId() . '/returns';
     }
 }
