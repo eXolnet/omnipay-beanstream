@@ -16,6 +16,14 @@ class Response extends AbstractResponse
     }
 
     /**
+     * @return bool
+     */
+    public function isRedirect()
+    {
+        return isset($this->data['contents']) && ! empty($this->data['contents']);
+    }
+
+    /**
      * @return null|string
      */
     public function getMessage()
@@ -36,6 +44,10 @@ class Response extends AbstractResponse
      */
     public function getTransactionReference()
     {
+        if ($this->isRedirect()) {
+            return $this->getMerchantData();
+        }
+
         return $this->value('id');
     }
 
@@ -101,6 +113,22 @@ class Response extends AbstractResponse
     public function getCard()
     {
         return $this->value('card');
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMerchantData()
+    {
+        return $this->value('merchant_data');
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getContents()
+    {
+        return $this->value('contents');
     }
 
     /**
